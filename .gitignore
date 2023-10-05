@@ -1,3 +1,8 @@
+# Generated Files
 *.xlsx
-**/.local/
 *.csv
+*.pdf
+
+# Files From UI Path
+**/.local/
+**/.tmh/
