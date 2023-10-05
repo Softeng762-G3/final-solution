@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ScrapeData" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="986,4572" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ScrapeData" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1848,4910" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -102,7 +102,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ScrapeData" sap:VirtualizedContainerService.HintSize="996,4507" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ScrapeData" sap:VirtualizedContainerService.HintSize="996,4845" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="urlDataTable" />
       <Variable x:TypeArguments="sd:DataTable" Name="scrapedDataTable" />
@@ -113,13 +113,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="954,4081" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="D:\\Z-Data\\2023_Doc\\UOA\\2023-semester-2\\SOFTENG 762\\Projects\\Implementation\\project-1\\ScrapeTrademe\\web_scraping.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="954,4429" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="..\\ScrapeTrademe\\web_scraping.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="920,3972" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="920,4320" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,7 +132,7 @@
                 </OutArgument>
               </ui:ExcelReadRange.DataTable>
             </ui:ExcelReadRange>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="878,95" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="878,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Read Urls"</CSharpValue>
@@ -146,13 +146,13 @@
                 </OutArgument>
               </ui:BuildDataTable.DataTable>
             </ui:BuildDataTable>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="878,3547" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="878,3899" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="844,3426" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="844,3780" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="mileAge" />
                     </Sequence.Variables>
@@ -161,13 +161,13 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="802,3334" sap2010:WorkflowViewState.IdRef="OpenBrowser_1">
+                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="802,3688" sap2010:WorkflowViewState.IdRef="OpenBrowser_1">
                       <ui:OpenBrowser.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768,3231" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768,3587" sap2010:WorkflowViewState.IdRef="Sequence_2">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="scrapedUrl" />
                               <Variable x:TypeArguments="x:String" Name="y_m_m" />
@@ -190,7 +190,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="726,95" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="726,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
                               <ui:LogMessage.Message>
                                 <InArgument x:TypeArguments="x:Object">
                                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">"Start scraping"</CSharpValue>
@@ -241,7 +241,7 @@
                                 </ui:GetValue.Value>
                               </ui:GetValue>
                             </Sequence>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">
                                   <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">space_1</CSharpReference>
@@ -253,7 +253,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,61" sap2010:WorkflowViewState.IdRef="Assign_8">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">
                                   <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">space_2</CSharpReference>
@@ -265,7 +265,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,61" sap2010:WorkflowViewState.IdRef="Assign_12">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">
                                   <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">space_3</CSharpReference>
@@ -277,7 +277,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,61" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">
                                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">year</CSharpReference>
@@ -289,7 +289,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">
                                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">make</CSharpReference>
@@ -301,7 +301,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,61" sap2010:WorkflowViewState.IdRef="Assign_11">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">
                                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">model</CSharpReference>
@@ -356,7 +356,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AnchorBase>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,61" sap2010:WorkflowViewState.IdRef="Assign_13">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">
                                   <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_49">mileAge</CSharpReference>
@@ -368,7 +368,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <TryCatch DisplayName="Try Catch_ImportHistory" sap:VirtualizedContainerService.HintSize="726,53" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                            <TryCatch DisplayName="Try Catch_ImportHistory" sap:VirtualizedContainerService.HintSize="726,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -445,7 +445,7 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,63" sap2010:WorkflowViewState.IdRef="Assign_14">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,64" sap2010:WorkflowViewState.IdRef="Assign_14">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">
                                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">importHis</CSharpReference>
@@ -460,7 +460,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <TryCatch DisplayName="Try Catch_FuelEconomy" sap:VirtualizedContainerService.HintSize="726,193" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                            <TryCatch DisplayName="Try Catch_FuelEconomy" sap:VirtualizedContainerService.HintSize="726,579" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -468,7 +468,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,352" sap2010:WorkflowViewState.IdRef="AnchorBase_3">
+                                <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="384,352" sap2010:WorkflowViewState.IdRef="AnchorBase_3">
                                   <ui:AnchorBase.Action>
                                     <ActivityAction x:TypeArguments="ui:Anchor">
                                       <ActivityAction.Argument>
@@ -507,7 +507,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </ui:AnchorBase>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,23" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -518,7 +518,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                     </ActivityAction.Argument>
-                                    <Assign sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">
                                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">fuelEco_scrapedData</CSharpReference>
@@ -534,7 +534,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,63" sap2010:WorkflowViewState.IdRef="Assign_16">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,64" sap2010:WorkflowViewState.IdRef="Assign_16">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">
                                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_61">fuelEconomy</CSharpReference>
@@ -551,7 +551,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="726,118" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="pgdn" KeyModifiers="None" SpecialKey="True">
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="726,114" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="pgdn" KeyModifiers="None" SpecialKey="True">
                               <ui:SendHotkey.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="df381c49-9925-4ce9-baac-fd468bf8539f">
                                   <ui:Target.TimeoutMS>
@@ -563,7 +563,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </ui:Target>
                               </ui:SendHotkey.Target>
                             </ui:SendHotkey>
-                            <TryCatch DisplayName="Try Catch_Price" sap:VirtualizedContainerService.HintSize="726,589" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                            <TryCatch DisplayName="Try Catch_Price" sap:VirtualizedContainerService.HintSize="726,579" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -607,7 +607,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </ui:AnchorBase>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,23" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -618,7 +618,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                     </ActivityAction.Argument>
-                                    <Assign sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">
                                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">price_scrapedData</CSharpReference>
@@ -632,7 +632,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <Assign sap:VirtualizedContainerService.HintSize="726,63" sap2010:WorkflowViewState.IdRef="Assign_15">
+                            <Assign sap:VirtualizedContainerService.HintSize="726,64" sap2010:WorkflowViewState.IdRef="Assign_15">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">
                                   <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">price</CSharpReference>
@@ -646,7 +646,7 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="726,191" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                            <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="726,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
                               <ui:AddDataRow.ArrayRow>
                                 <InArgument x:TypeArguments="s:Object[]">
                                   <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">new object[] {year, make, model, mileAge, importHis, fuelEconomy, price}</CSharpValue>
@@ -687,14 +687,14 @@ importHis_scrapedData.Contains("NZ New") ? "NZ New" :
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,95" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">"Writing Data to CSV File"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" Delimitator="Comma" DisplayName="Write CSV" FilePath="ScrapeData.csv" sap:VirtualizedContainerService.HintSize="954,159" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1">
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" Delimitator="Comma" DisplayName="Write CSV" FilePath="ScrapeData.csv" sap:VirtualizedContainerService.HintSize="954,153" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1">
       <ui:WriteCsvFile.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">scrapedDataTable</CSharpValue>
