@@ -1,7 +1,7 @@
 {
   "name": "VisualiseResults",
   "description": "Visualise results from the TradeMe Scraper.",
-  "main": "Main.xaml",
+  "main": "Visualisation.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.20.3]",
     "UiPath.Mail.Activities": "[1.12.3]",
@@ -47,8 +47,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "56aa8980-b015-44f8-8b47-6699aba1020a",
+      "filePath": "Visualisation.xaml",
+      "uniqueId": "9cad4db8-085c-44be-bfa9-55f3cf438454",
       "input": [],
       "output": []
     }

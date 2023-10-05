@@ -1,7 +1,7 @@
 {
   "name": "ScrapeListingUrls",
   "description": "A simple scraper to acquire trademe links.",
-  "main": "Main.xaml",
+  "main": "ScrapeListingUrls.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.11.4]",
     "UiPath.Mail.Activities": "[1.12.3]",
@@ -20,6 +20,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -27,7 +28,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -45,8 +47,8 @@
   "expressionLanguage": "CSharp",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "56aa8980-b015-44f8-8b47-6659aba1020a",
+      "filePath": "ScrapeListingUrls.xaml",
+      "uniqueId": "5a2cd8dd-461c-4a18-8f08-da31bbbbcbe1",
       "input": [],
       "output": []
     }

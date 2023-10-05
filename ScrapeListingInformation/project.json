@@ -1,7 +1,7 @@
 {
   "name": "ScrapeListingInformation",
   "description": "Scrape relevant data from URLs & save to a CSV",
-  "main": "Main.xaml",
+  "main": "ScrapeListingInformation.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.11.4]",
     "UiPath.Mail.Activities": "[1.12.3]",
@@ -47,8 +47,8 @@
   "expressionLanguage": "CSharp",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "4d3540e2-ac39-4d26-9b5a-ae447c3e9beb",
+      "filePath": "ScrapeListingInformation.xaml",
+      "uniqueId": "d0d4d931-fb84-4b28-8dec-584154425436",
       "input": [],
       "output": []
     }
