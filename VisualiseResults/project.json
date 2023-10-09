@@ -1,17 +1,19 @@
 {
-  "name": "VisualiseResults",
-  "description": "Visualise results from the TradeMe Scraper.",
-  "main": "Visualisation.xaml",
+  "name": "uipath",
+  "projectId": "21b26447-c31e-4ec8-8a0e-2d0d585fb572",
+  "description": "Blank Process",
+  "main": "C#.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.20.3]",
-    "UiPath.Mail.Activities": "[1.12.3]",
-    "UiPath.System.Activities": "[21.10.5]",
-    "UiPath.UIAutomation.Activities": "[21.10.6]"
+    "UiPath.Excel.Activities": "[2.22.0-preview]",
+    "UiPath.Mail.Activities": "[1.20.3]",
+    "UiPath.System.Activities": "[23.8.1-preview]",
+    "UiPath.Testing.Activities": "[23.8.0-preview]",
+    "UiPath.UIAutomation.Activities": "[23.6.2-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
-  "studioVersion": "21.10.7.0",
+  "studioVersion": "23.8.0.0",
   "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
@@ -42,13 +44,13 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": true
   },
-  "expressionLanguage": "VisualBasic",
+  "expressionLanguage": "CSharp",
   "entryPoints": [
     {
-      "filePath": "Visualisation.xaml",
-      "uniqueId": "9cad4db8-085c-44be-bfa9-55f3cf438454",
+      "filePath": "C#.xaml",
+      "uniqueId": "2d1388f5-7d83-4abf-b629-20c568b81e18",
       "input": [],
       "output": []
     }

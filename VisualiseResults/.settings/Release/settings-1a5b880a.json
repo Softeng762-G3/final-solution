@@ -27,5 +27,11 @@
   "UiPath.UiAutomation.Activities.MouseEvents.SendWindowMessages": "False",
   "UiPath.UiAutomation.Activities.MouseEvents.SimulateClick": "False",
   "UiPath.UiAutomation.Activities.MouseEvents.SimulateHover": "False",
-  "UiPath.UiAutomation.Activities.Screenshot.WaitBefore": "300"
+  "UiPath.UiAutomation.Activities.Screenshot.WaitBefore": "300",
+  "UiPath.UiAutomation.Activities.Browser.NativeWebView2": "False",
+  "UiPath.UiAutomation.Activities.Browser.EnableWorkaroundForSimulateClickMV3": "False",
+  "UiPath.UiAutomation.Activities.Browser.OpenBrowserTimeoutSeconds": "60",
+  "UiPath.UiAutomation.Activities.SAP.EnforceHardTimeout": "False",
+  "UiPath.UiAutomation.Activities.SAP.SapAdditionalScaling": "True",
+  "UiPath.UiAutomation.Activities.OtherActivities.ExecutionWorld": "Isolated"
 }
