@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1102.8,4414.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabc="clr-namespace:UiPath.Excel.Activities.Business.ChartModifications;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1294.8,4414.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabc="clr-namespace:UiPath.Excel.Activities.Business.ChartModifications;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -108,7 +108,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="534.8,4040.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="..\\ScrapeListingInformation\\scrape_data.xlsx">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="534.8,4040.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="..\\ScrapeListingInformation\\scrape_data.xlsx">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
@@ -120,7 +120,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:CreatePivotTableXv2 DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.8,434.4" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_2" LayoutRowType="Compact" TableName="Count of car models from each brand" ValuesMode="Columns">
+                    <ueab:CreatePivotTableXv2 DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.8,434.4" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_2" LayoutRowType="Compact" TableName="Car Brands" ValuesMode="Columns">
                       <ueab:CreatePivotTableXv2.Body>
                         <ActivityAction>
                           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -171,7 +171,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ueabc:ModifyChartTitleModification DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="386.8,81.2" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_1" Title="Count of car models from each brand" />
+                            <ueabc:ModifyChartTitleModification DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="386.8,81.2" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_1" Title="Car Brands" />
                             <ueabc:ShowHideDataLabelsModification DisplayName="Show/Hide Data Labels" sap:VirtualizedContainerService.HintSize="386.8,54.8" sap2010:WorkflowViewState.IdRef="ShowHideDataLabelsModification_1" ShowDataLabels="True" />
                             <ueabc:ShowHideLegendModification DisplayName="Show/Hide Legend" sap:VirtualizedContainerService.HintSize="386.8,54.8" sap2010:WorkflowViewState.IdRef="ShowHideLegendModification_1" />
                           </Sequence>
@@ -183,7 +183,7 @@
                         </InArgument>
                       </ueab:UpdateChartX.Chart>
                     </ueab:UpdateChartX>
-                    <ueab:CreatePivotTableXv2 DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.8,434.4" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_3" LayoutRowType="Compact" TableName="Average price of each car brand" ValuesMode="Columns">
+                    <ueab:CreatePivotTableXv2 DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.8,434.4" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_3" LayoutRowType="Compact" TableName="Average Price for Car Brand" ValuesMode="Columns">
                       <ueab:CreatePivotTableXv2.Body>
                         <ActivityAction>
                           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -234,7 +234,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ueabc:ModifyChartTitleModification DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="386.8,81.2" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_2" Title="Average price of each car brand" />
+                            <ueabc:ModifyChartTitleModification DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="386.8,81.2" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_2" Title="Average Price for Car Brand" />
                             <ueabc:ShowHideLegendModification DisplayName="Show/Hide Legend" sap:VirtualizedContainerService.HintSize="386.8,54.8" sap2010:WorkflowViewState.IdRef="ShowHideLegendModification_2" />
                             <ueabc:ShowHideDataLabelsModification DisplayName="Show/Hide Data Labels" sap:VirtualizedContainerService.HintSize="386.8,54.8" sap2010:WorkflowViewState.IdRef="ShowHideDataLabelsModification_2" ShowDataLabels="True" />
                           </Sequence>
@@ -246,7 +246,7 @@
                         </InArgument>
                       </ueab:UpdateChartX.Chart>
                     </ueab:UpdateChartX>
-                    <ueab:CreatePivotTableXv2 DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.8,434.4" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_4" LayoutRowType="Compact" TableName="Average mile age of each car brand" ValuesMode="Columns">
+                    <ueab:CreatePivotTableXv2 DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.8,434.4" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_4" LayoutRowType="Compact" TableName="Average Mileage for Car Brand" ValuesMode="Columns">
                       <ueab:CreatePivotTableXv2.Body>
                         <ActivityAction>
                           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -271,7 +271,7 @@
                         </InArgument>
                       </ueab:CreatePivotTableXv2.Range>
                     </ueab:CreatePivotTableXv2>
-                    <ueab:InsertExcelChartX ChartCategory="Column" ChartHeight="211" ChartType="xlColumnStacked100" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="438.8,240" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_9" Left="60" Top="20">
+                    <ueab:InsertExcelChartX ChartCategory="Column" ChartHeight="211" ChartType="xlColumnStacked" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="438.8,240" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_9" Left="60" Top="20">
                       <ueab:InsertExcelChartX.InsertIntoSheet>
                         <InArgument x:TypeArguments="ue:ISheetRef">
                           <CSharpValue x:TypeArguments="ue:ISheetRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">Excel.Sheet["Sheet 4"]</CSharpValue>
@@ -297,7 +297,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ueabc:ModifyChartTitleModification DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="386.8,81.2" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_3" Title="Average mile age of each car brand" />
+                            <ueabc:ModifyChartTitleModification DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="386.8,81.2" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_3" Title="Average Mileage for Car Brand" />
                             <ueabc:ShowHideLegendModification DisplayName="Show/Hide Legend" sap:VirtualizedContainerService.HintSize="386.8,54.8" sap2010:WorkflowViewState.IdRef="ShowHideLegendModification_3" />
                             <ueabc:ShowHideDataLabelsModification DisplayName="Show/Hide Data Labels" sap:VirtualizedContainerService.HintSize="386.8,54.8" sap2010:WorkflowViewState.IdRef="ShowHideDataLabelsModification_3" ShowDataLabels="True" />
                           </Sequence>
@@ -309,10 +309,20 @@
                         </InArgument>
                       </ueab:UpdateChartX.Chart>
                     </ueab:UpdateChartX>
-                    <ueab:SaveAsPdfX EndPage="{x:Null}" StartPage="{x:Null}" DestinationPdfPath=".\\report.pdf" DisplayName="Save Excel File As PDF" sap:VirtualizedContainerService.HintSize="438.8,164" sap2010:WorkflowViewState.IdRef="SaveAsPdfX_1" SaveQuality="StandardQuality">
+                    <ueab:SaveAsPdfX DestinationPdfPath=".\\report.pdf" DisplayName="Save Excel File As PDF" sap:VirtualizedContainerService.HintSize="438.8,164" sap2010:WorkflowViewState.IdRef="SaveAsPdfX_1" SaveQuality="StandardQuality">
+                      <ueab:SaveAsPdfX.EndPage>
+                        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="3" />
+                        </InArgument>
+                      </ueab:SaveAsPdfX.EndPage>
+                      <ueab:SaveAsPdfX.StartPage>
+                        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="1" />
+                        </InArgument>
+                      </ueab:SaveAsPdfX.StartPage>
                       <ueab:SaveAsPdfX.Workbook>
                         <InArgument x:TypeArguments="ue:IWorkbookQuickHandle">
-                          <CSharpValue x:TypeArguments="ue:IWorkbookQuickHandle" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">Excel</CSharpValue>
+                          <CSharpValue x:TypeArguments="ue:IWorkbookQuickHandle" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">Excel</CSharpValue>
                         </InArgument>
                       </ueab:SaveAsPdfX.Workbook>
                     </ueab:SaveAsPdfX>
