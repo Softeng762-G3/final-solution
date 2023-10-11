@@ -1,5 +1,6 @@
 {
   "name": "ScrapeListingInformation",
+  "projectId": "debd48c2-3afe-4890-9cbc-55cfffa427d3",
   "description": "Scrape relevant data from URLs & save to a CSV",
   "main": "ScrapeListingInformation.xaml",
   "dependencies": {
@@ -12,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.7.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.17",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -42,7 +43,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
   "entryPoints": [

@@ -1,5 +1,6 @@
 {
   "name": "ScrapeListingUrls",
+  "projectId": "c40c25cd-4119-4b43-b6b2-2085e9f3ae0c",
   "description": "A simple scraper to acquire trademe links.",
   "main": "ScrapeListingUrls.xaml",
   "dependencies": {
@@ -12,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.7.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.5",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -42,7 +43,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
   "entryPoints": [
