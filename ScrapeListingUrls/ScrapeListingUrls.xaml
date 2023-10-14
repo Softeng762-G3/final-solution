@@ -93,7 +93,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ScrapeListingUrls" sap:VirtualizedContainerService.HintSize="582.4,2763.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ScrapeListingUrls" sap:VirtualizedContainerService.HintSize="582.4,2744.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
         <Variable.Default>
@@ -131,20 +131,20 @@
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
     <ui:Comment sap:VirtualizedContainerService.HintSize="520,75.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Navigate through page numbers to scrape all URL of used PHEV listings" />
-    <Sequence DisplayName="URL Scraping" sap:VirtualizedContainerService.HintSize="520,390.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="URL Scraping" sap:VirtualizedContainerService.HintSize="520,372" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="write write write write" BrowserType="Edge" DisplayName="Attach Browser 'Used Hybrid Cars Page'" sap:VirtualizedContainerService.HintSize="433.6,278.4" sap2010:WorkflowViewState.IdRef="BrowserScope_3" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Used Hybrid Cars Page'" sap:VirtualizedContainerService.HintSize="433.6,260" sap2010:WorkflowViewState.IdRef="BrowserScope_3" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" sap2010:Annotation.AnnotationText="Writ  write w" ContinueOnError="True" DisplayName="Extract Structured Data 'TG-ROW'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Title' attr='text' name2='Url' attr2='href'&gt;&lt;webctrl tag='tg-col' /&gt;&lt;webctrl tag='tm-search-card-switcher' idx='1' /&gt;&lt;webctrl tag='tm-motors-advanced-search-card' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,138.4" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname=' Next ' tag='A' /&gt;" SimulateClick="True">
+            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" sap2010:Annotation.AnnotationText="Proceed through page numbers and extract listing URLs" ContinueOnError="True" DisplayName="Extract Structured Data 'TG-ROW'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Title' attr='text' name2='Url' attr2='href'&gt;&lt;webctrl tag='tg-col' /&gt;&lt;webctrl tag='tm-search-card-switcher' idx='1' /&gt;&lt;webctrl tag='tm-motors-advanced-search-card' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,151.2" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname=' Next ' tag='A' /&gt;" SimulateClick="True">
               <ui:ExtractData.DataTable>
                 <InOutArgument x:TypeArguments="sd:DataTable">
                   <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ExtractDataTable</CSharpReference>
@@ -167,7 +167,6 @@
         </ui:BrowserScope.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
@@ -177,7 +176,7 @@
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Completed URL scraping, attempting to write to file."</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Completed URL scraping, Writing Data to web_scraping.xlsx"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
@@ -188,7 +187,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Write to Excel file" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Write to Excel File" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -210,7 +209,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <TryCatch sap2010:Annotation.AnnotationText="Close window after the scraping activity. Notify user if browser fails to close." DisplayName="Catch Closing Browser Error" sap:VirtualizedContainerService.HintSize="520,777.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="Close window after the scraping activity. Notify user if browser fails to close." DisplayName="Try Catch Closing Browser Error" sap:VirtualizedContainerService.HintSize="520,777.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
