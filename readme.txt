@@ -13,6 +13,8 @@ Kevin Wijaya: Implemented ‘MasterBot’ and deployment to Orchestrator
 Martin Jurado Mesa: Implemented ‘VisualiseResults’ with Dinh
 Qunzhi Zhou: Implemented ‘ScrapeListingInformation’
 
+More detailed explanation on individual member contributions and github commit history can be found in this repository's Wiki.
+
 [Submission Files]
 - readme.txt
 - MasterBot: Implementation of a bot to run three sub-bots sequentially on orchestrator
