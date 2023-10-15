@@ -5,7 +5,7 @@ https://github.com/Softeng762-G3/final-solution
 
 Although there are only four contributors in this repository, the contributions are shared by all group members. The breakdown of contributions are as follows:
 
-Amy Rimmer: Presentation preparation, and tidy ups to ‘VisualiseResults’
+Amy Rimmer: Presentation preparation, and tidy ups to ‘VisualiseResults’ and final testing
 Dinh Quyet: Implemented ‘VisualiseResults’ with Martin
 Jo Bull: Implemented ‘ScrapeListingUrls’
 Julie Kim: Completed final documentation, logging and code tidy ups
@@ -47,7 +47,7 @@ The current UiPath bot version is modified to scrape a predefined number of web 
 * Option 1: Run MasterProcess (Recommended)
 1. Open the MasterProcess folder in submission, and open Main.xaml in UiPath.
 2. Click on "Manage Packages" in the top menu bar to check project dependencies and install them if needed.
-3. To run the bot, click the "Debug File" button with the blue triangle icon, and the application will start.
+3. To run the bot, click the "Debug File" or "Run File" button with the triangle icons, and the application will start.
 
 * Option 2: Run in Orchestrator 
 1. Open https://cloud.uipath.com/rpatisszjf/DefaultTenant/orchestrator_/
