@@ -21,6 +21,7 @@ Qunzhi Zhou: Implemented ‘ScrapeListingInformation’
 - ScrapeListingInformation: Bot to scrape vehicle information from listings
 - VisualiseResults: Bot to visualise scrape data and save as file
 - Final_Video_withOrchestrator.mp4: A recorded run of the solution through the orchestrator method.
+- ExampleReport.pdf: An example of generated visualisation report from running the solution.
 
 [About the Project]
 This is a project as a part of the course INFOSYS300/SOFTENG762 at the University of Auckland as of the Academic Year 2023. 
