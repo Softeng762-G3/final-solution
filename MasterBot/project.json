@@ -1,5 +1,6 @@
 {
   "name": "MasterBot",
+  "projectId": "fd2353c2-6afa-4fbb-946c-ee93da610350",
   "description": "Main UIPath bot that can be run to call all three bots: ScrapeListingUrls, ScrapeListingInformation and Visualisation and run them in sequence to complete the task of gathering, collating and displaying second-hand PHEV data for user.",
   "main": "Main.xaml",
   "dependencies": {
@@ -43,7 +44,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
   "entryPoints": [
