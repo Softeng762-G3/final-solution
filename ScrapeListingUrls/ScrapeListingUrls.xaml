@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ExtractListings" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="827,2735" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractListings" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1181.6,2832" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>GlobalConstantsNamespace</x:String>
@@ -33,6 +33,7 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.IO</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -79,6 +80,12 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -86,107 +93,107 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ScrapeListingUrls" sap:VirtualizedContainerService.HintSize="608,2670" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ScrapeListingUrls" sap:VirtualizedContainerService.HintSize="582.4,2744.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
         <Variable.Default>
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">new System.Data.DataTable();</CSharpValue>
         </Variable.Default>
       </Variable>
+      <Variable x:TypeArguments="x:String" Name="variable1" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"Beginning scraping of Trade Me listings."</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">"Beginning Trade Me Listing URL Scraping"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="546,357" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="https://www.trademe.co.nz/a/motors/cars/plug-in-hybrid/search?listed_as=classifieds">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="520,244.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="https://www.trademe.co.nz/a/motors/cars/plug-in-hybrid/search?listed_as=classifieds&amp;vehicle_condition=used">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
-              <ui:LogMessage.Message>
-                <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">"Browser Opened To Begin Scraping Listing URLs"</CSharpValue>
-                </InArgument>
-              </ui:LogMessage.Message>
-            </ui:LogMessage>
-          </Sequence>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace">
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"Browser Open to Scrape Listing URLs"</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="546,476" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="520,75.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Navigate through page numbers to scrape all URL of used PHEV listings" />
+    <Sequence DisplayName="URL Scraping" sap:VirtualizedContainerService.HintSize="520,372" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'UsedHybri Page'" sap:VirtualizedContainerService.HintSize="484,365" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="483ceb9a2a8e674473fa12a6ca5971bf" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Used Hybrid Cars Page'" sap:VirtualizedContainerService.HintSize="433.6,260" sap2010:WorkflowViewState.IdRef="BrowserScope_3" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" sap2010:Annotation.AnnotationText="Proceed through page numbers and extract listing URLs" ContinueOnError="True" DisplayName="Extract Structured Data 'TG-ROW'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Title' attr='text' name2='Url' attr2='href'&gt;&lt;webctrl tag='tg-col' /&gt;&lt;webctrl tag='tm-search-card-switcher' idx='1' /&gt;&lt;webctrl tag='tm-motors-advanced-search-card' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,151.2" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname=' Next ' tag='A' /&gt;" SimulateClick="True">
+              <ui:ExtractData.DataTable>
+                <InOutArgument x:TypeArguments="sd:DataTable">
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ExtractDataTable</CSharpReference>
+                </InOutArgument>
+              </ui:ExtractData.DataTable>
+              <ui:ExtractData.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3e031f45-3d4a-4e93-8cba-db5d677090fb" InformativeScreenshot="daef0a0b914e482ca41f68ee0d69f221" Selector="&lt;webctrl tag='TG-ROW' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:ExtractData.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DisplayName="Extract Structured Data 'TG-ROW'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Title' attr='text' name2='Url' attr2='href'&gt;&lt;webctrl tag='tg-col' /&gt;&lt;webctrl tag='tm-search-card-switcher' idx='1' /&gt;&lt;webctrl tag='tm-motors-advanced-search-card' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname=' Next ' tag='A' /&gt;" SimulateClick="True">
-                <ui:ExtractData.DataTable>
-                  <InOutArgument x:TypeArguments="sd:DataTable">
-                    <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ExtractDataTable</CSharpReference>
-                  </InOutArgument>
-                </ui:ExtractData.DataTable>
-                <ui:ExtractData.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3e031f45-3d4a-4e93-8cba-db5d677090fb" InformativeScreenshot="daef0a0b914e482ca41f68ee0d69f221" Selector="&lt;webctrl tag='TG-ROW' /&gt;" WaitForReady="COMPLETE">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                  </ui:Target>
-                </ui:ExtractData.Target>
-              </ui:ExtractData>
-            </Sequence>
+            </ui:ExtractData>
           </ActivityAction>
         </ui:BrowserScope.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </ui:BrowserScope>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Completed scraping, attempting to write to file."</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Completed URL scraping, Writing Data to web_scraping.xlsx"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="546,309" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="web_scraping.xlsx">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="520,75.2" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Save extracted URL of all used PHEV listings to a file" />
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Save URL to Excel file named web_scraping. Can be found in ____ folder." DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="520,340.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="web_scraping.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,199" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Write to Excel File" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1">
+            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="387.2,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1">
               <ui:ExcelWriteRange.DataTable>
                 <InArgument x:TypeArguments="sd:DataTable">
                   <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">ExtractDataTable</CSharpValue>
@@ -196,29 +203,39 @@
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="546,748" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="Close window after the scraping activity. Notify user if browser fails to close." DisplayName="Try Catch Closing Browser Error" sap:VirtualizedContainerService.HintSize="520,777.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="484,245" sap2010:WorkflowViewState.IdRef="BrowserScope_2" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Used Hybrid Cars Page'" sap:VirtualizedContainerService.HintSize="483.2,245.6" sap2010:WorkflowViewState.IdRef="BrowserScope_2" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,136" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,136.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="CloseTab_2" />
+                <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="387.2,24.8" sap2010:WorkflowViewState.IdRef="CloseTab_2" />
               </Sequence>
             </ActivityAction>
           </ui:BrowserScope.Body>
         </ui:BrowserScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="488,105" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="486.4,105.6" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -233,16 +250,16 @@
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn">
           <ui:LogMessage.Message>
             <InArgument x:TypeArguments="x:Object">
-              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"Tried to close browser, but failed. Maybe it was closed by the user?"</CSharpValue>
+              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Failed to close browser."</CSharpValue>
             </InArgument>
           </ui:LogMessage.Message>
         </ui:LogMessage>
       </TryCatch.Finally>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">"Completed scraping Trade Me listing URLs."</CSharpValue>
