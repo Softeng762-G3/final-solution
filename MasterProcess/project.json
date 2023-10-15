@@ -1,5 +1,6 @@
 {
   "name": "MasterProcess",
+  "projectId": "b0919f36-b453-4aa4-acf5-3a6fc9d19896",
   "description": "This is a super process that runs all three bots sequentially for a completed solution. The bots that are run are: ScrapeListingUrls, ScrapeListingInformation, Visualisation",
   "main": "Main.xaml",
   "dependencies": {
@@ -43,7 +44,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
   "entryPoints": [
