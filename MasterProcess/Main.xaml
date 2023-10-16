@@ -295,12 +295,12 @@
       </ui:LogMessage>
     </Sequence>
     <ui:Comment sap:VirtualizedContainerService.HintSize="450,76" sap2010:WorkflowViewState.IdRef="Comment_18" Text="// Running process to scrape vehicle information from listings" />
-    <Sequence DisplayName="ScrapeListingInformation" sap:VirtualizedContainerService.HintSize="1017.5999999999999,9110.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="ScrapeListingInformation" sap:VirtualizedContainerService.HintSize="1017.5999999999999,8869.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="urlDataTable" />
         <Variable x:TypeArguments="sd:DataTable" Name="scrapedDataTable" />
         <Variable x:TypeArguments="sd:DataTable" Name="y_m_m_DT" />
-        <Variable x:TypeArguments="x:Int32" Name="mileAge" />
+        <Variable x:TypeArguments="x:Int64" Name="mileAge" />
         <Variable x:TypeArguments="x:String" Name="price_scrapedData" />
         <Variable x:TypeArguments="x:String" Name="y_m_m" />
         <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
@@ -402,26 +402,26 @@
           </ActivityAction>
         </ui:OpenBrowser.Body>
       </ui:OpenBrowser>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Used Hybrid Car Page'" sap:VirtualizedContainerService.HintSize="955.6,6883.6" sap2010:WorkflowViewState.IdRef="BrowserScope_3" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Used Hybrid Car Page'" sap:VirtualizedContainerService.HintSize="955.6,6642.4" sap2010:WorkflowViewState.IdRef="BrowserScope_3" Selector="&lt;html app='msedge.exe' title='Used Hybrid Cars NZ - Hybrid Cars For Sale - Trade Me | Trade Me Motors' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="921.6,6774.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="921.6,6533.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:Comment sap:VirtualizedContainerService.HintSize="859.6,76" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// For each listing page, scrape necessary vehicle information data for users" />
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Open one vehicle listing page at a time to scrape necessary information data" DisplayName="Save Information to Data Table" sap:VirtualizedContainerService.HintSize="859.6,6482.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Open one vehicle listing page at a time to scrape necessary information data" DisplayName="Save Information to Data Table" sap:VirtualizedContainerService.HintSize="859.6,6241.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Data Scraping from Web" sap:VirtualizedContainerService.HintSize="825.6,6335.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Data Scraping from Web" sap:VirtualizedContainerService.HintSize="825.6,6094" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -453,14 +453,14 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:NavigateTo>
                       <ui:Comment sap:VirtualizedContainerService.HintSize="763.6,76" sap2010:WorkflowViewState.IdRef="Comment_6" Text="// Scrape vehicle year, make and model information and save to table" />
-                      <TryCatch sap2010:Annotation.AnnotationText="In the case of year, make or model of the vehicle being empty, assign empty string to avoid null" DisplayName="Try Catch Year Make Model" sap:VirtualizedContainerService.HintSize="763.6,475.2" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                      <TryCatch sap2010:Annotation.AnnotationText="In the case of year, make or model of the vehicle being empty, assign empty string to avoid null" DisplayName="Try Catch Year Make Model" sap:VirtualizedContainerService.HintSize="763.6,234" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <TryCatch.Try>
-                          <Sequence DisplayName="Data Scraping Year Make Model" sap:VirtualizedContainerService.HintSize="450,396" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence DisplayName="Data Scraping Year Make Model" sap:VirtualizedContainerService.HintSize="450,364.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -504,10 +504,10 @@
                           </Sequence>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,264" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.8" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -515,7 +515,7 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                               </ActivityAction.Argument>
-                              <Sequence sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <Sequence sap:VirtualizedContainerService.HintSize="496,192.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -712,13 +712,13 @@
                       </TryCatch>
                       <Assign sap:VirtualizedContainerService.HintSize="763.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_7">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:Int32">
-                            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">mileAge</CSharpReference>
+                          <OutArgument x:TypeArguments="x:Int64">
+                            <CSharpReference x:TypeArguments="x:Int64" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">mileAge</CSharpReference>
                           </OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Int32">
-                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">int.Parse(new string(mile_scrapedData.Where(char.IsDigit).ToArray()));</CSharpValue>
+                          <InArgument x:TypeArguments="x:Int64">
+                            <CSharpValue x:TypeArguments="x:Int64" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">Int64.Parse(new string(mile_scrapedData.Where(char.IsDigit).ToArray()));</CSharpValue>
                           </InArgument>
                         </Assign.Value>
                       </Assign>
